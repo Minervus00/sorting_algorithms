@@ -6,6 +6,7 @@
  * @arr: a pointer to the array
  * @low: the lowest index in the partition
  * @hi: the highest index in the partition
+ * @size: size of the array
  * Return: nothing
  */
 void lomuto_partition(int *arr, int low, int hi, size_t size)
