@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
  * insertion_sort_list - sorts a doubly linked list of integers in ascending
@@ -8,44 +9,37 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *buff = *list, *tmp, *prev, *next;
+	listint_t *buff = *list, *prev, *next, *next_cmp;
 
 	if (buff == NULL || buff->next == NULL)
 		return;
-	while (buff)
+
+	next_cmp = buff->next;
+	while (next_cmp)
 	{
-		next = buff->next;
-		tmp = next;
+		buff = next_cmp;
+		next_cmp = buff->next;
 		prev = buff->prev;
+		/*printf("current: %d | next_cmp: %d\n", buff->n);*/
 		while (prev)
 		{
 			if (buff->n >= prev->n)
-			{
-				if (prev == buff->prev)
-					break;
-				/* printf("swapping ", prev->n); */
-				prev->next = buff;
-				buff->prev = prev;
-				buff->next = tmp;
-				tmp->prev = buff;
-				print_list(*list);
 				break;
-			}
-			prev->next = tmp;
-			if (tmp)
-				tmp->prev = prev;
-			tmp = prev;
-			prev = prev->prev;
-			if (prev == NULL)
-			{
-				/* printf("swap to head -> "); */
+			/* Swapping buff and prev */
+			/*printf("swapping  with %d -> ", prev->n);*/
+			next = buff->next;
+			buff->prev = prev->prev;
+			if (buff->next)
+				(buff->next)->prev = prev;
+			buff->next = prev;
+			prev->next = next;
+			if (prev->prev)
+				(prev->prev)->next = buff;
+			else
 				*list = buff;
-				buff->next = tmp;
-				tmp->prev = buff;
-				buff->prev = prev;
-				print_list(*list);
-			}
+			prev->prev = buff;
+			print_list(*list);
+			prev = buff->prev;
 		}
-		buff = next;
 	}
 }
