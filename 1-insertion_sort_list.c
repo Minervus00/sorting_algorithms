@@ -9,7 +9,7 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *buff = *list, *prev, *next, *next_cmp;
+	listint_t *buff = *list, *prev, *next_cmp;
 
 	if (buff == NULL || buff->next == NULL)
 		return;
@@ -27,12 +27,13 @@ void insertion_sort_list(listint_t **list)
 				break;
 			/* Swapping buff and prev */
 			/*printf("swapping  with %d -> ", prev->n);*/
-			next = buff->next;
+			/*next = buff->next;*/
+			prev->next = buff->next;
 			buff->prev = prev->prev;
 			if (buff->next)
 				(buff->next)->prev = prev;
 			buff->next = prev;
-			prev->next = next;
+			/*prev->next = next;*/
 			if (prev->prev)
 				(prev->prev)->next = buff;
 			else
