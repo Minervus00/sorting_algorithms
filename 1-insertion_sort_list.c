@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
 
 /**
  * insertion_sort_list - sorts a doubly linked list of integers in ascending
@@ -27,13 +26,11 @@ void insertion_sort_list(listint_t **list)
 				break;
 			/* Swapping buff and prev */
 			/*printf("swapping  with %d -> ", prev->n);*/
-			/*next = buff->next;*/
 			prev->next = buff->next;
 			buff->prev = prev->prev;
 			if (buff->next)
 				(buff->next)->prev = prev;
 			buff->next = prev;
-			/*prev->next = next;*/
 			if (prev->prev)
 				(prev->prev)->next = buff;
 			else
