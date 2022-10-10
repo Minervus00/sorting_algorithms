@@ -3,9 +3,10 @@
 
 /**
  * shell_sort - sorts an array of integers in ascending order using the
- * Shell sort algorithm, using the Knuth sequence
+ * Shell sort algorithm, using the Knuth sequence.
  * sequence: U(n + 1) = U(n) * 3 + 1; U(0)=0
  * gap = [1, 4, 13, 40, 121, 364, 1093, ...]
+ * 
  * @array: the array be sorted
  * @size:array's size
  * Return: nothing
@@ -19,7 +20,7 @@ void shell_sort(int *array, size_t size)
 	{
 		if (gap[i] >= size)
 			continue;
-		/*for each gap, k makes the sequence starting point move forward*/
+		/*For each gap, k makes the sequence starting point move forward*/
 		for (k = 0; k < size - gap[i]; k++)
 		{
 			for (p = 1; (p * gap[i]) + k < size; p++)
@@ -33,14 +34,13 @@ void shell_sort(int *array, size_t size)
 						tmp = array[hi];
 						array[hi] = array[lo];
 						array[lo] = tmp;
-						/*print_array(array, size);*/
 					}
 					lo = lo - gap[i];
 				}
 			}
 			/**
 			 * Avoid useless operations when gap == 1.
-			 * Otherwise it will make size times the final
+			 * Otherwise it will make (size - 1) times the final
 			 * insertion sort, which must be done once
 			 */
 			if (gap[i] == 1)
