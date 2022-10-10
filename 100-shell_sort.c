@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
 
 /**
  * shell_sort - sorts an array of integers in ascending order using the
@@ -25,6 +24,7 @@ void shell_sort(int *array, size_t size)
 			for (p = 1; (p * gap[i]) + k < size; p++)
 			{
 				lo = ((p - 1) * gap[i]) + k;
+				/*Sort the sequence with insertion sort*/
 				while (lo >= 0)
 				{
 					hi = lo + gap[i];
