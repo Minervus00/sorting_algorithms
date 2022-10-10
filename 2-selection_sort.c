@@ -4,7 +4,7 @@
 /**
  * selection_sort - sorts an array of integers in ascending order using
  * the Selection sort algorithm
- * @array: pointer the array
+ * @array: the array to be sorted
  * @size: array's size
  * Return: nothing
  */

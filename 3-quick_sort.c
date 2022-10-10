@@ -3,7 +3,7 @@
 
 /**
  * lomuto_partition - sorts a partition of the array using Quick sort
- * @arr: a pointer to the array
+ * @arr: the array to be sorted
  * @low: the lowest index in the partition
  * @hi: the highest index in the partition
  * @size: size of the array
@@ -22,19 +22,24 @@ void lomuto_partition(int *arr, int low, int hi, size_t size)
 	{
 		if (arr[i] <= pivot)
 		{
-			tmp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = tmp;
 			if (i != j)
+			{
+				tmp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = tmp;
 				print_array(arr, size);
+			}
 			j++;
 		}
 	}
-	tmp = arr[hi];
-	arr[hi] = arr[j];
-	arr[j] = tmp;
+
 	if (hi != j)
+	{
+		tmp = arr[hi];
+		arr[hi] = arr[j];
+		arr[j] = tmp;
 		print_array(arr, size);
+	}
 
 	lomuto_partition(arr, low, j - 1, size);
 	lomuto_partition(arr, j + 1, hi, size);
