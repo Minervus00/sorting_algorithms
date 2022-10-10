@@ -6,7 +6,6 @@
  * Shell sort algorithm, using the Knuth sequence.
  * sequence: U(n + 1) = U(n) * 3 + 1; U(0)=0
  * gap = [1, 4, 13, 40, 121, 364, 1093, ...]
- * 
  * @array: the array be sorted
  * @size:array's size
  * Return: nothing
