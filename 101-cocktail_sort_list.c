@@ -26,7 +26,7 @@ void swap_nodes(listint_t **list, listint_t *buff, listint_t *next)
  * @list: the list to be sorted
  * @hifence: the high fence, from which sort stops
  * @lowfence: the low fence, from which sort begins
- * Return: 1 if any item has been swapped, 0 otherwise 
+ * Return: 1 if any item has been swapped, 0 otherwise
  */
 int sort_forward(listint_t **list, listint_t **hifence, listint_t **lowfence)
 {
@@ -58,7 +58,7 @@ int sort_forward(listint_t **list, listint_t **hifence, listint_t **lowfence)
  * @list: the list to be sorted
  * @hifence: the high fence, from which sort begins
  * @lowfence: the low fence, from which sort stops
- * Return: 1 if any item has been swapped, 0 otherwise 
+ * Return: 1 if any item has been swapped, 0 otherwise
  */
 int sort_backward(listint_t **list, listint_t **hifence, listint_t **lowfence)
 {
