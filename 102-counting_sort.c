@@ -39,6 +39,8 @@ void counting_sort(int *array, size_t size)
 	int *new_arr, max = array[0];
 	size_t i = 0, new_size;
 
+	if (size < 0)
+		return;
 	/* Find the max and min num in the array */
 	for (i = 1; i < size; i++)
 	{
