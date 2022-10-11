@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
 
 /**
  * swap_nodes - swap two nodes of a doubly linked list
@@ -64,7 +63,6 @@ int sort_backward(listint_t **list, listint_t **hifence, listint_t **lowfence)
 {
 	listint_t *buff, *next = (*hifence)->prev;
 	int swapped = 0;
-
 
 	/* printf("backward - lowfence: %d\n", ((*lowfence) ? (*lowfence)->n : 0)); */
 	while (next->prev != *lowfence)

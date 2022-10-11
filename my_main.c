@@ -9,17 +9,13 @@
  */
 int main(void)
 {
-	listint_t *list;
 	int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
 	size_t n = sizeof(array) / sizeof(array[0]);
 
-	list = create_listint(array, n);
-	if (!list)
-	return (1);
-	print_list(list);
+	print_array(array, n);
 	printf("\n");
-	cocktail_sort_list(&list);
+	counting_sort(array, n);
 	printf("\n");
-	print_list(list);
+	print_array(array, n);
 	return (0);
 }
