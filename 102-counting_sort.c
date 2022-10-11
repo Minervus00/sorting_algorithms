@@ -31,8 +31,8 @@ void end_sort(int *array, int *new_array, size_t size)
 /**
  * counting_sort - orts an array of integers in ascending order using
  * the Counting sort algorithm
- * @array 
- * @size 
+ * @array: the array to be sorted
+ * @size: array's size
  */
 void counting_sort(int *array, size_t size)
 {
