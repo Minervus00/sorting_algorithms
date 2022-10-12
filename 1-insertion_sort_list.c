@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
  * insertion_sort_list - sorts a doubly linked list of integers in ascending
@@ -8,11 +9,13 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *buff = *list, *prev, *next_cmp;
+	listint_t *buff, *prev, *next_cmp;
 
-	if (list == NULL || buff == NULL || buff->next == NULL)
+	if (list == NULL)
 		return;
-
+	buff = *list;
+	if (buff == NULL || buff->next == NULL)
+		return;
 	next_cmp = buff->next;
 	while (next_cmp)
 	{
