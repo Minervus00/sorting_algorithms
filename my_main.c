@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	insertion_sort_list(NULL);
+	counting_sort(NULL, 0);
 	
 	return (0);
 }

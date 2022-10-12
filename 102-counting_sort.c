@@ -36,11 +36,12 @@ void end_sort(int *array, int *new_array, size_t size)
  */
 void counting_sort(int *array, size_t size)
 {
-	int *new_arr, max = array[0];
+	int *new_arr, max;
 	size_t i = 0, new_size;
 
 	if ((int) size < 2 || array == NULL)
 		return;
+	max = array[0];
 	/* Find the max and min num in the array */
 	for (i = 1; i < size; i++)
 	{
