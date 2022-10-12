@@ -22,13 +22,11 @@ void insertion_sort_list(listint_t **list)
 		buff = next_cmp;
 		next_cmp = buff->next;
 		prev = buff->prev;
-		/*printf("current: %d | next_cmp: %d\n", buff->n);*/
 		while (prev)
 		{
 			if (buff->n >= prev->n)
 				break;
 			/* Swapping buff and prev */
-			/*printf("swapping  with %d -> ", prev->n);*/
 			prev->next = buff->next;
 			buff->prev = prev->prev;
 			if (buff->next)
