@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_side - prints merging part elements 
+ * print_side - prints merging part elements
  * @arr: the main array
  * @side: the side's name (left or right / Done after sorting)
  * @start:starting index
@@ -58,7 +58,7 @@ void top_down_merge(int *arr, int *cpy, int begin, int mid, int end, int size)
 }
 
 /**
- * top_down_split - split array in two halves recursively 
+ * top_down_split - split array in two halves recursively
  * @arr: the main array
  * @cpy: a copy of the array
  * @begin: the partition beginning index
