@@ -10,7 +10,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *buff = *list, *prev, *next_cmp;
 
-	if (buff == NULL || buff->next == NULL)
+	if (list == NULL || buff == NULL || buff->next == NULL)
 		return;
 
 	next_cmp = buff->next;
