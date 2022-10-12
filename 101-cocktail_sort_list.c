@@ -95,7 +95,7 @@ void cocktail_sort_list(listint_t **list)
 	int swapped = 1;
 	listint_t *hifence = NULL, *lowfence = NULL;
 
-	if (*list == NULL || (*list)->next == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
 	while (swapped)
