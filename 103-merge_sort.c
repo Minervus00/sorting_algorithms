@@ -72,10 +72,8 @@ void top_down_split(int *arr, int *cpy, int begin, int end, int size)
 	if (mid <= 1)
 		return;
 	mid = (mid + (2 * begin)) / 2;
-	/* printf("Spliting right - %d to %d\n", begin, mid); */
 	/* Split left until bottom is reached */
 	top_down_split(arr, cpy, begin, mid, size);
-	/* printf("Spliting left - %d to %d\n", mid, end);*/
 	/* Split right until bottom reached */
 	top_down_split(arr, cpy, mid, end, size);
 	/* Sort and merge two parts */
@@ -83,8 +81,8 @@ void top_down_split(int *arr, int *cpy, int begin, int end, int size)
 }
 
 /**
- * merge_sort -  sorts an array of integers in ascending order using
- * the top-down  Merge sort algorithm
+ * merge_sort - sorts an array of integers in ascending order using
+ * the top-down Merge sort algorithm
  * @array: the array to be sorted
  * @size: array's size
  */
